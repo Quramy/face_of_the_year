@@ -18,7 +18,7 @@ labels_placeholder = tf.placeholder("float", shape=(None, model.NUM_CLASSES))
 keep_prob = tf.placeholder("float")
 
 sess = tf.InteractiveSession()
-logits = inference(images_placeholder, keep_prob)
+logits = model.inference(images_placeholder, keep_prob)
 
 saver = tf.train.Saver()
 sess.run(tf.global_variables_initializer())

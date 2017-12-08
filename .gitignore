@@ -1,7 +1,9 @@
 bin/
 include/
 lib/
+data.tgz
 data/
+data.bk/
 logs/
 node_modules/
 __pycache__/

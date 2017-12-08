@@ -11,6 +11,8 @@ function createInfer(math: NDArrayMath,  vars: { [varName: string]: NDArray }) {
   const W_fc2 = vars["fc2/weights"] as Array2D;
   const b_fc2 = vars["fc2/biases"] as Array1D;
 
+  console.log(W_fc2.shape);
+
   return (x: Array4D) => {
     //
     // メモ stridesやカーネルサイズは幅と高さの分だけでよい

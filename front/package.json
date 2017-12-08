@@ -6,9 +6,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "manifest": "rimraf model && mkdir -p model && python  scripts/dump_checkpoints/dump_checkpoint_vars.py --model_type=tensorflow --output_dir=./dist/model --checkpoint_file=../detection_model/logs/model.ckpt",
+    "manifest": "rimraf built/model && mkdir -p built/model && python scripts/dump_checkpoints/dump_checkpoint_vars.py --model_type=tensorflow --output_dir=./built/model --checkpoint_file=../detection_model/logs/model.ckpt",
     "watch": "webpack --watch",
-    "start": "http-server -p 8000"
+    "start": "http-server -p 8000",
+    "deploy": "bash deploy.sh"
   },
   "keywords": [],
   "author": "",

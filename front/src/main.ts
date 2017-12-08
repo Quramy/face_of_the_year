@@ -4,6 +4,9 @@ import { Array1D } from "deeplearn";
 const categoryLabels = [
   "高橋一生",
   "ブルゾンちえみ",
+  "吉岡里帆",
+  "カズオ イシグロ",
+  "藤井聡太",
 ];
 
 function showSpinner(msg: string) {
@@ -15,14 +18,6 @@ function hideSpinner() {
   document.querySelector(".spin-wrap").classList.add("hide");
   document.querySelector("body").classList.remove("loading");
 }
-
-// function showSpinnerBtn() {
-//   document.querySelector("#btn").classList.add("loading");
-// }
-// 
-// function hideSpinnerBtn() {
-//   document.querySelector("#btn").classList.remove("loading");
-// }
 
 function handleDragover(e: DragEvent) {
   e.stopPropagation();
@@ -113,12 +108,12 @@ function updateOutput(conv: Float32Array) {
   }
 
   let out: string;
-  if (m > 0.9) {
+  if (m > 0.95) {
     out = `完全に${categoryLabels[idx]}ですね`;
-  } else if (m > 0.75) {
+  } else if (m > 0.85) {
     out = `まぁまぁ${categoryLabels[idx]}ですね`;
   } else {
-    out = `${categoryLabels[idx]}っすかね、どっちでもいいけど...`;
+    out = `${categoryLabels[idx]}っすかね...`;
   }
   const p = document.querySelector("#out_message").innerHTML = out;;
 }
@@ -134,14 +129,11 @@ async function main() {
         startCalc(worker);
         break;
       case "res_match":
-        // hideSpinnerBtn();
         const img = ev.data.out as Image;
         const input = toFloatList(img.data);
-        // showImage(ev.data.out, "output");
         const logits = infer(input);
         const conv = await logits.data() as Float32Array;
         updateOutput(conv);
-        // updateOutput([logits.get(0, 0), logits.get(0, 1)]);
         break;
       default:
     }
@@ -149,7 +141,6 @@ async function main() {
 
   loadImage("assets/sample.jpg", "img");
 
-  // document.querySelector("#btn").addEventListener("click", () => startCalc(worker));
   const inputDiv = document.querySelector(".input > div");
   inputDiv.addEventListener("dragover", handleDragover);
   inputDiv.addEventListener("drop", handleDropFile.bind(null, worker, "img"))

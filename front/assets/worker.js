@@ -14,9 +14,7 @@ function detectFace(input, roi) {
     const classfier = new cv.CascadeClassifier();
     classfier.load('../../test/data/haarcascade_frontalface_default.xml');
     const img = cv.matFromArray(input, 24);
-    // const imgGray = new cv.Mat();
     const imgColor = new cv.Mat();
-    // cv.cvtColor(img, imgGray, cv.ColorConversionCodes.COLOR_RGBA2GRAY.value, 0);
     cv.cvtColor(img, imgColor, cv.ColorConversionCodes.COLOR_RGBA2BGR.value, 0);
     const faces = new cv.RectVector();
     const s1 = [0, 0];
@@ -27,14 +25,10 @@ function detectFace(input, roi) {
     let x;
     if (!faces.size()) {
       x = imgColor;
-      // out = mat2Image(imgColor);
     } else {
       const rect = faces.get(0);
       console.log(rect.x, rect.y, rect.width, rect.height);
-      x = imgColor.getROI_Rect(rect).clone();
-      // const cropped = roi.clone(); // 仮
-      // out = mat2Image(roi.clone());
-      // cropped.delete();
+      x = imgColor.getROI_Rect(rect);
     }
     const resized = new cv.Mat();
     cv.resize(x, resized, [28, 28], 0, 0, 0);
@@ -43,24 +37,7 @@ function detectFace(input, roi) {
     imgColor.delete();
     faces.delete();
     classfier.delete();
-    // imgGray.delete();
     return out;
-
-    // for (let i = 0; i < faces.size(); i += 1) {
-    //     const rect = faces.get(i);
-    //     const { x, y, width, height } = rect;
-    //     const p1 = [x, y];
-    //     const p2 = [x + width, y + height];
-    //     const color = new cv.Scalar(255, 0, 0);
-    //     cv.rectangle(imgColor, p1, p2, color, 2, 8, 0);
-    //     rect.delete();
-    //     color.delete();
-    // }
-    // renderImage(imgColor, 'output');
-    // img.delete();
-    // imgColor.delete();
-    // faces.delete();
-    // imgGray.delete();
 }
 
 addEventListener("message", ev => {

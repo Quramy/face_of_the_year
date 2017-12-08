@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import os
 import sys
 import cv2
@@ -12,7 +14,7 @@ flags.DEFINE_string('train', 'data/train.txt', 'File name of train data')
 flags.DEFINE_string('test', 'data/test.txt', 'File name of train data')
 flags.DEFINE_string('train_dir', 'logs', 'Directory to put the training data.')
 
-flags.DEFINE_integer('max_steps', 200, 'Number of steps to run trainer.')
+flags.DEFINE_integer('max_steps', 400, 'Number of steps to run trainer.')
 flags.DEFINE_integer('batch_size', 10, 'Batch size'
                      'Must divide evenly into the dataset sizes.')
 flags.DEFINE_float('learning_rate', 1e-4, 'Initial learning rate.')
