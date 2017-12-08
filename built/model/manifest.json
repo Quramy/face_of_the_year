@@ -139,40 +139,40 @@
   "fc2/biases": {
     "filename": "fc2_biases",
     "shape": [
-      2
+      5
     ]
   },
   "fc2/biases/Adam": {
     "filename": "fc2_biases_Adam",
     "shape": [
-      2
+      5
     ]
   },
   "fc2/biases/Adam_1": {
     "filename": "fc2_biases_Adam_1",
     "shape": [
-      2
+      5
     ]
   },
   "fc2/weights": {
     "filename": "fc2_weights",
     "shape": [
       1024,
-      2
+      5
     ]
   },
   "fc2/weights/Adam": {
     "filename": "fc2_weights_Adam",
     "shape": [
       1024,
-      2
+      5
     ]
   },
   "fc2/weights/Adam_1": {
     "filename": "fc2_weights_Adam_1",
     "shape": [
       1024,
-      2
+      5
     ]
   }
 }

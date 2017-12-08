@@ -8038,6 +8038,9 @@ var deeplearn_1 = __webpack_require__(21);
 var categoryLabels = [
     "高橋一生",
     "ブルゾンちえみ",
+    "吉岡里帆",
+    "カズオ イシグロ",
+    "藤井聡太",
 ];
 function showSpinner(msg) {
     document.querySelector(".spin-wrap").classList.remove("hide");
@@ -8121,14 +8124,14 @@ function updateOutput(conv) {
         }
     }
     var out;
-    if (m > 0.9) {
+    if (m > 0.95) {
         out = "\u5B8C\u5168\u306B" + categoryLabels[idx] + "\u3067\u3059\u306D";
     }
-    else if (m > 0.75) {
+    else if (m > 0.85) {
         out = "\u307E\u3041\u307E\u3041" + categoryLabels[idx] + "\u3067\u3059\u306D";
     }
     else {
-        out = categoryLabels[idx] + "\u3063\u3059\u304B\u306D\u3001\u3069\u3063\u3061\u3067\u3082\u3044\u3044\u3051\u3069...";
+        out = categoryLabels[idx] + "\u3063\u3059\u304B\u306D...";
     }
     var p = document.querySelector("#out_message").innerHTML = out;
     ;
@@ -8236,6 +8239,7 @@ function createInfer(math, vars) {
     var b_fc1 = vars["fc1/biases"];
     var W_fc2 = vars["fc2/weights"];
     var b_fc2 = vars["fc2/biases"];
+    console.log(W_fc2.shape);
     return function (x) {
         var conv2d = function (input, weight) { return math.conv2d(input, weight, null, [1, 1], "same"); };
         var max_pool_2x2 = function (x) { return math.maxPool(x, [2, 2], [2, 2], "same"); };
