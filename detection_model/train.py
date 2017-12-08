@@ -12,7 +12,7 @@ flags.DEFINE_string('train', 'data/train.txt', 'File name of train data')
 flags.DEFINE_string('test', 'data/test.txt', 'File name of train data')
 flags.DEFINE_string('train_dir', 'logs', 'Directory to put the training data.')
 
-flags.DEFINE_integer('max_steps', 30, 'Number of steps to run trainer.')
+flags.DEFINE_integer('max_steps', 200, 'Number of steps to run trainer.')
 flags.DEFINE_integer('batch_size', 10, 'Batch size'
                      'Must divide evenly into the dataset sizes.')
 flags.DEFINE_float('learning_rate', 1e-4, 'Initial learning rate.')
@@ -110,10 +110,10 @@ if __name__ == '__main__':
         # Sessionの作成
         sess = tf.Session()
         # 変数の初期化
-        sess.run(tf.initialize_all_variables())
+        sess.run(tf.global_variables_initializer())
         # TensorBoardで表示する値の設定
         summary_op = tf.summary.merge_all()
-        summary_writer = tf.summary.FileWriter(FLAGS.train_dir, sess.graph_def)
+        summary_writer = tf.summary.FileWriter(FLAGS.train_dir, sess.graph)
         
         # 訓練の実行
         for step in range(FLAGS.max_steps):

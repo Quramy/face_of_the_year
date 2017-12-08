@@ -1,6 +1,6 @@
 import tensorflow as tf
 
-NUM_CLASSES = 2
+NUM_CLASSES = 5
 IMAGE_SIZE = 28
 IMAGE_PIXELS = IMAGE_SIZE*IMAGE_SIZE*3
 

@@ -6,9 +6,9 @@ const fs = require("mz/fs");
 const rp = require("request-promise");
 const _ = require("lodash");
 
-const classes = ["高橋一生", "ブルゾンちえみ"];
-const classPrefixes = ["issei", "chiemi"];
-const classIndex = 1, className = classes[classIndex], classPrefix = classPrefixes[classIndex];
+const classes = ["高橋一生", "ブルゾンちえみ", "吉岡里帆", "藤井聡太", "カズオ イシグロ"];
+const classPrefixes = ["issei", "chiemi", "riho", "sota", "kazuo"];
+const classIndex = +process.argv[2] || 0, className = classes[classIndex], classPrefix = classPrefixes[classIndex];
 
 const queryTemplate = (q) => `https://www.google.co.jp/search?q=${q}+顔&source=lnms&tbm=isch&sa=X&ved=0ahUKEwi12K-LrfjXAhXFi5QKHcvwDS4Q_AUICigB&biw=2133&bih=1017`;
 
@@ -54,13 +54,14 @@ async function getImage(url, prefix, idx) {
     const ext = res.headers["content-type"].replace(/image\//, ".");
     const buf = Buffer.from(res.body, "utf-8");
     console.log("Fetched: ", url);
-    return await fs.writeFile(`data/images/${prefix}_raw_${idx}${ext}`, buf);
+    return await fs.writeFile(`data/raw_images/${prefix}_raw_${idx}${ext}`, buf);
   } catch (e) {
     console.warn(e);
   }
 }
 
 async function main() {
+  console.log("prefix:", classPrefix);
   const list = await createList();
   await fs.writeFile("data/_list.json", JSON.stringify(list, null, 2), "utf-8");
   await Promise.all(list.map((url, i) => getImage(url, classPrefix, i)));
