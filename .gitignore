@@ -1,0 +1,14 @@
+bin/
+include/
+lib/
+data/
+logs/
+node_modules/
+*.log
+.Python
+build/
+built/
+dist/
+buildasm/
+.DS_Store
+front/model/

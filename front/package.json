@@ -1,0 +1,22 @@
+{
+  "name": "front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "manifest": "python  scripts/dump_checkpoints/dump_checkpoint_vars.py --model_type=tensorflow --output_dir=./model --checkpoint_file=../detection_model/logs/model.ckpt"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "deeplearn": "^0.3.13"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.56",
+    "light-ts-loader": "^1.1.2",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0"
+  }
+}
