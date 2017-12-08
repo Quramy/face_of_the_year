@@ -15,6 +15,9 @@ body.loading {
 
 main {
   box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 960px;
+  min-width: 400px;
   min-height: calc(100vh - 180px);
 }
 
@@ -75,8 +78,19 @@ a:link:hover {
   margin-left: 30px;
 }
 
+.input .wrap {
+  width: 100%;
+  display: flex;
+  padding: 40px;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #282831;
+}
+
 .input canvas {
-  max-width: calc(50vw - 75px);
+  max-width: calc(800px);
 }
 
 .output > div {
@@ -87,6 +101,11 @@ a:link:hover {
 
 .output.hide {
   display: none;
+}
+
+#out_message {
+  text-align: center;
+  font-size: 32pt;
 }
 
 #btn {

@@ -38,7 +38,7 @@ function createInfer(math: NDArrayMath,  vars: { [varName: string]: NDArray }) {
     const h_pool2 = max_pool_2x2(h_conv2) as Array4D;
 
     // 全結合層1の作成
-    const h_pool2Mat = h_pool2.as2D(1, 7*7*64);
+    const h_pool2Mat = h_pool2.as2D(1, 7 * 7 * 64);
     const h_fc1 = math.relu(math.add(math.matMul(h_pool2Mat, W_fc1), b_fc1)) as Array2D;
 
     // 全結合層2, softmax

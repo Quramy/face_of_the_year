@@ -17,7 +17,7 @@ function detectFace(input, roi) {
     // const imgGray = new cv.Mat();
     const imgColor = new cv.Mat();
     // cv.cvtColor(img, imgGray, cv.ColorConversionCodes.COLOR_RGBA2GRAY.value, 0);
-    cv.cvtColor(img, imgColor, cv.ColorConversionCodes.COLOR_RGBA2RGB.value, 0);
+    cv.cvtColor(img, imgColor, cv.ColorConversionCodes.COLOR_RGBA2BGR.value, 0);
     const faces = new cv.RectVector();
     const s1 = [0, 0];
     const s2 = [0, 0];
