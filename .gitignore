@@ -4,6 +4,7 @@ lib/
 data/
 logs/
 node_modules/
+__pycache__/
 *.log
 .Python
 build/
@@ -12,3 +13,4 @@ dist/
 buildasm/
 .DS_Store
 front/model/
+pip-selfcheck.json
