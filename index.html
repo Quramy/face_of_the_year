@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>今年の顔判別器</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body class="loading">
+  <main>
+    <h1>今年の顔判別器</h1>
+    <div class="input">
+      <div>
+        <header>
+          <h3>お手持ちの画像をドラッグ&ドロップ！</h3>
+        </header>
+        <div class="wrap">
+          <canvas id="img"></canvas>
+        </div>
+      </div>
+    </div>
+    <p id="out_message"></p>
+    <!--
+    <div id="btn">
+      <span class="message">Calculate</span>
+      <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+  </div>-->
+  </main>
+
+  <div class="spin-wrap">
+    <span class="spin-message">Loading modules...</span>
+    <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+      <div class="rect5"></div>
+    </div>
+  </div>
+
+  <!--
+  <canvas id="output"></canvas>
+  -->
+
+  <footer>
+    <address>&copy; Quramy 2017-</address> <br />
+    <a href="https://github.com/Quramy/face_of_the_year" target="_blank">https://github.com/Quramy/face_of_the_year</a>
+  </footer>
+  <script src="built/main.bundle.js"></script>
+</body>
+</html>

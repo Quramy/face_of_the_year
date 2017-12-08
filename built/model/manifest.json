@@ -1,0 +1,178 @@
+{
+  "beta1_power": {
+    "filename": "beta1_power",
+    "shape": []
+  },
+  "beta2_power": {
+    "filename": "beta2_power",
+    "shape": []
+  },
+  "conv1/biases": {
+    "filename": "conv1_biases",
+    "shape": [
+      32
+    ]
+  },
+  "conv1/biases/Adam": {
+    "filename": "conv1_biases_Adam",
+    "shape": [
+      32
+    ]
+  },
+  "conv1/biases/Adam_1": {
+    "filename": "conv1_biases_Adam_1",
+    "shape": [
+      32
+    ]
+  },
+  "conv1/weights": {
+    "filename": "conv1_weights",
+    "shape": [
+      5,
+      5,
+      3,
+      32
+    ]
+  },
+  "conv1/weights/Adam": {
+    "filename": "conv1_weights_Adam",
+    "shape": [
+      5,
+      5,
+      3,
+      32
+    ]
+  },
+  "conv1/weights/Adam_1": {
+    "filename": "conv1_weights_Adam_1",
+    "shape": [
+      5,
+      5,
+      3,
+      32
+    ]
+  },
+  "conv2/biases": {
+    "filename": "conv2_biases",
+    "shape": [
+      64
+    ]
+  },
+  "conv2/biases/Adam": {
+    "filename": "conv2_biases_Adam",
+    "shape": [
+      64
+    ]
+  },
+  "conv2/biases/Adam_1": {
+    "filename": "conv2_biases_Adam_1",
+    "shape": [
+      64
+    ]
+  },
+  "conv2/weights": {
+    "filename": "conv2_weights",
+    "shape": [
+      5,
+      5,
+      32,
+      64
+    ]
+  },
+  "conv2/weights/Adam": {
+    "filename": "conv2_weights_Adam",
+    "shape": [
+      5,
+      5,
+      32,
+      64
+    ]
+  },
+  "conv2/weights/Adam_1": {
+    "filename": "conv2_weights_Adam_1",
+    "shape": [
+      5,
+      5,
+      32,
+      64
+    ]
+  },
+  "fc1/biases": {
+    "filename": "fc1_biases",
+    "shape": [
+      1024
+    ]
+  },
+  "fc1/biases/Adam": {
+    "filename": "fc1_biases_Adam",
+    "shape": [
+      1024
+    ]
+  },
+  "fc1/biases/Adam_1": {
+    "filename": "fc1_biases_Adam_1",
+    "shape": [
+      1024
+    ]
+  },
+  "fc1/weights": {
+    "filename": "fc1_weights",
+    "shape": [
+      3136,
+      1024
+    ]
+  },
+  "fc1/weights/Adam": {
+    "filename": "fc1_weights_Adam",
+    "shape": [
+      3136,
+      1024
+    ]
+  },
+  "fc1/weights/Adam_1": {
+    "filename": "fc1_weights_Adam_1",
+    "shape": [
+      3136,
+      1024
+    ]
+  },
+  "fc2/biases": {
+    "filename": "fc2_biases",
+    "shape": [
+      2
+    ]
+  },
+  "fc2/biases/Adam": {
+    "filename": "fc2_biases_Adam",
+    "shape": [
+      2
+    ]
+  },
+  "fc2/biases/Adam_1": {
+    "filename": "fc2_biases_Adam_1",
+    "shape": [
+      2
+    ]
+  },
+  "fc2/weights": {
+    "filename": "fc2_weights",
+    "shape": [
+      1024,
+      2
+    ]
+  },
+  "fc2/weights/Adam": {
+    "filename": "fc2_weights_Adam",
+    "shape": [
+      1024,
+      2
+    ]
+  },
+  "fc2/weights/Adam_1": {
+    "filename": "fc2_weights_Adam_1",
+    "shape": [
+      1024,
+      2
+    ]
+  }
+}
