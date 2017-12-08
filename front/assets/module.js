@@ -3,7 +3,7 @@ const version = 10001;
 class ModuleClass {
 
   locateFile(baseName) {
-    return `dist/${baseName}`;
+    return `../built/${baseName}`;
   }
 
   instantiateWasm(imports, callback) {

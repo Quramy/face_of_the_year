@@ -124,8 +124,8 @@ function updateOutput(conv: Float32Array) {
 }
 
 async function main() {
-  const infer = await restoreAndCreateInfer("model");
-  const worker = new Worker("worker.js");
+  const infer = await restoreAndCreateInfer("built/model");
+  const worker = new Worker("assets/worker.js");
   worker.addEventListener("message", async (ev) => {
     const meta = ev.data;
     switch (meta.type) {

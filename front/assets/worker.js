@@ -1,4 +1,4 @@
-importScripts('wasm-util.js', 'module.js', 'dist/cv-wasm.js');
+importScripts('wasm-util.js', 'module.js', '../built/cv-wasm.js');
 
 function mat2Image(mat) {
   const width = mat.cols, height = mat.rows, channels = mat.channels(), data = new Uint8Array(mat.data());
