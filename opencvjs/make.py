@@ -214,7 +214,7 @@ try:
                 # os.path.join('lib','libopencv_ml.a'),
                 # os.path.join('lib','libopencv_flann.a'),
                 os.path.join('lib','libopencv_objdetect.a'),
-                os.path.join('lib','libopencv_features2d.a') ,
+                # os.path.join('lib','libopencv_features2d.a') ,
 
                 # os.path.join('lib','libopencv_shape.a'),
                 # os.path.join('lib','libopencv_photo.a'),

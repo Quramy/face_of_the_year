@@ -808,7 +808,7 @@ if __name__ == "__main__":
                     # "../opencv/Modules/shape/include/opencv2/shape/hist_cost.hpp",
                     # "../opencv/Modules/shape/include/opencv2/shape/shape_distance.hpp",
                     # "../opencv/Modules/shape/include/opencv2/shape/shape_transformer.hpp",
-                    "../opencv/Modules/features2d/include/opencv2/features2d.hpp",
+                    # "../opencv/Modules/features2d/include/opencv2/features2d.hpp",
                     # "../opencv/Modules/video/include/opencv2/video/tracking.hpp",
                     # "../opencv/Modules/video/include/opencv2/video/background_segm.hpp",
                     "../opencv/Modules/objdetect/include/opencv2/objdetect.hpp",
