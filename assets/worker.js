@@ -36,6 +36,7 @@ addEventListener("message", ev => {
   switch (meta.type) {
     case "req_match":
       const { img } = ev.data;
+      detectFace(img);
       break;
     default:
   }
