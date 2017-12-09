@@ -26,6 +26,7 @@ function detectFace(inputImage) {
     const resized = new cv.Mat();
     cv.resize(x, resized, [28, 28], 0, 0, 0);
     const out = mat2Image(resized);
+    postMessage({ type: 'res_match', out }, [out.data.buffer]);
     [imgRaw, imgColor, faces, classifier, resized].forEach(p => p.delete())
     return out;
 }
@@ -35,8 +36,6 @@ addEventListener("message", ev => {
   switch (meta.type) {
     case "req_match":
       const { img } = ev.data;
-      const out = detectFace(img);
-      postMessage({ type: 'res_match', out }, [out.data.buffer]);
       break;
     default:
   }

@@ -139,7 +139,8 @@ async function main() {
     }
   });
 
-  loadImage("assets/sample.jpg", "img");
+  const imgId = ~~(Math.random() * 5);
+  loadImage(`assets/sample_${imgId}.jpg`, "img");
 
   const inputDiv = document.querySelector(".input > div");
   inputDiv.addEventListener("dragover", handleDragover);
