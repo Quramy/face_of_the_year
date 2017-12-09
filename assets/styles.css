@@ -90,7 +90,8 @@ a:link:hover {
 }
 
 .input canvas {
-  max-width: calc(800px);
+  max-width: calc(100vw - 180px);
+  max-height: calc(50vh);
 }
 
 .output > div {

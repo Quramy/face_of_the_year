@@ -8139,7 +8139,7 @@ function updateOutput(conv) {
 function main() {
     return __awaiter(this, void 0, void 0, function () {
         var _this = this;
-        var infer, worker, inputDiv;
+        var infer, worker, imgId, inputDiv;
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4, inference_1.restoreAndCreateInfer("built/model")];
@@ -8175,7 +8175,8 @@ function main() {
                             }
                         });
                     }); });
-                    loadImage("assets/sample.jpg", "img");
+                    imgId = ~~(Math.random() * 5);
+                    loadImage("assets/sample_" + imgId + ".jpg", "img");
                     inputDiv = document.querySelector(".input > div");
                     inputDiv.addEventListener("dragover", handleDragover);
                     inputDiv.addEventListener("drop", handleDropFile.bind(null, worker, "img"));
